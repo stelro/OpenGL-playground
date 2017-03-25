@@ -105,16 +105,42 @@ CMakeFiles/opengltutorial.dir/ShaderProgram.cpp.o.provides: CMakeFiles/opengltut
 CMakeFiles/opengltutorial.dir/ShaderProgram.cpp.o.provides.build: CMakeFiles/opengltutorial.dir/ShaderProgram.cpp.o
 
 
+CMakeFiles/opengltutorial.dir/DebugLog.cpp.o: CMakeFiles/opengltutorial.dir/flags.make
+CMakeFiles/opengltutorial.dir/DebugLog.cpp.o: ../DebugLog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stel/opengltutorial/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/opengltutorial.dir/DebugLog.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengltutorial.dir/DebugLog.cpp.o -c /home/stel/opengltutorial/DebugLog.cpp
+
+CMakeFiles/opengltutorial.dir/DebugLog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengltutorial.dir/DebugLog.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/stel/opengltutorial/DebugLog.cpp > CMakeFiles/opengltutorial.dir/DebugLog.cpp.i
+
+CMakeFiles/opengltutorial.dir/DebugLog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengltutorial.dir/DebugLog.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/stel/opengltutorial/DebugLog.cpp -o CMakeFiles/opengltutorial.dir/DebugLog.cpp.s
+
+CMakeFiles/opengltutorial.dir/DebugLog.cpp.o.requires:
+
+.PHONY : CMakeFiles/opengltutorial.dir/DebugLog.cpp.o.requires
+
+CMakeFiles/opengltutorial.dir/DebugLog.cpp.o.provides: CMakeFiles/opengltutorial.dir/DebugLog.cpp.o.requires
+	$(MAKE) -f CMakeFiles/opengltutorial.dir/build.make CMakeFiles/opengltutorial.dir/DebugLog.cpp.o.provides.build
+.PHONY : CMakeFiles/opengltutorial.dir/DebugLog.cpp.o.provides
+
+CMakeFiles/opengltutorial.dir/DebugLog.cpp.o.provides.build: CMakeFiles/opengltutorial.dir/DebugLog.cpp.o
+
+
 # Object files for target opengltutorial
 opengltutorial_OBJECTS = \
 "CMakeFiles/opengltutorial.dir/main.cpp.o" \
-"CMakeFiles/opengltutorial.dir/ShaderProgram.cpp.o"
+"CMakeFiles/opengltutorial.dir/ShaderProgram.cpp.o" \
+"CMakeFiles/opengltutorial.dir/DebugLog.cpp.o"
 
 # External object files for target opengltutorial
 opengltutorial_EXTERNAL_OBJECTS =
 
 opengltutorial: CMakeFiles/opengltutorial.dir/main.cpp.o
 opengltutorial: CMakeFiles/opengltutorial.dir/ShaderProgram.cpp.o
+opengltutorial: CMakeFiles/opengltutorial.dir/DebugLog.cpp.o
 opengltutorial: CMakeFiles/opengltutorial.dir/build.make
 opengltutorial: /usr/local/lib/libSDL2main.a
 opengltutorial: /usr/local/lib/libSDL2.so
@@ -122,7 +148,7 @@ opengltutorial: /usr/lib/x86_64-linux-gnu/libSDL2_image.so
 opengltutorial: /usr/lib/x86_64-linux-gnu/libGLU.so
 opengltutorial: /usr/lib/x86_64-linux-gnu/libGL.so
 opengltutorial: CMakeFiles/opengltutorial.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/stel/opengltutorial/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable opengltutorial"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/stel/opengltutorial/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable opengltutorial"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/opengltutorial.dir/link.txt --verbose=$(VERBOSE)
 	/home/stel/clion-2016.2.1/bin/cmake/bin/cmake -E copy_directory /home/stel/opengltutorial/Shaders /home/stel/opengltutorial/cmake-build-debug/Shaders
 
@@ -133,6 +159,7 @@ CMakeFiles/opengltutorial.dir/build: opengltutorial
 
 CMakeFiles/opengltutorial.dir/requires: CMakeFiles/opengltutorial.dir/main.cpp.o.requires
 CMakeFiles/opengltutorial.dir/requires: CMakeFiles/opengltutorial.dir/ShaderProgram.cpp.o.requires
+CMakeFiles/opengltutorial.dir/requires: CMakeFiles/opengltutorial.dir/DebugLog.cpp.o.requires
 
 .PHONY : CMakeFiles/opengltutorial.dir/requires
 

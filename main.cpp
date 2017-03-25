@@ -16,7 +16,7 @@ int main()
     window = SDL_CreateWindow("Example", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1024, 768, SDL_WINDOW_OPENGL);
     SDL_GLContext glContext = SDL_GL_CreateContext(window);
     glewInit();
-    glClearColor(0.4f, 0.4f, 0.4f, 1.0f);
+    glClearColor(0.6f, 0.6f, 0.8f, 1.0f);
     //Window state
     bool w_state = true;
     SDL_Event e;
@@ -24,16 +24,24 @@ int main()
 
 
     GLfloat points[] = {
-             0.0f,  0.5f, 0.0f,
+             -0.5f,  0.5f, 0.0f,
              0.5f, -0.5f, 0.0f,
-            -0.5f, -0.5f, 0.0f
+            -0.5f, -0.5f, 0.0f,
     };
+
+    GLfloat points2[] = {
+            -0.5f, 0.5f, 0.0f,
+            0.5f, 0.5f, 0.0f,
+            0.5f, -0.5f, 0.0f
+    };
+
 
     GLuint vbo = 0; // Create vertex buffer object
     glGenBuffers (1, &vbo); // generate vertex buffer object
     glBindBuffer (GL_ARRAY_BUFFER, vbo); // set vbo as the current buffer in OpenGL's state machine
     glBufferData (GL_ARRAY_BUFFER, sizeof (points), points, GL_STATIC_DRAW); // the buffer is the size of 9 floating point numbers
     //and we give the address of the first value
+
 
     GLuint vao = 0; //Create vertex array object
     glGenVertexArrays (1, &vao); // generate vertex array object
@@ -43,9 +51,24 @@ int main()
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, NULL);
 
 
+    GLuint vbo2 = 0;
+    glGenBuffers(1, &vbo2);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo2);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(points2), points2, GL_STATIC_DRAW);
+
+    GLuint vao2 = 0;
+    glGenVertexArrays(1, &vao2);
+    glBindVertexArray(vao2);
+    glEnableVertexAttribArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo2);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, NULL);
+
+
     ShaderProgram shaderProgram;
     shaderProgram.loadShaders("Shaders/test.vert", "Shaders/test.frag");
 
+    ShaderProgram shaderProgram2;
+    shaderProgram2.loadShaders("Shaders/test.vert", "Shaders/test2.frag");
 
 
 
@@ -57,13 +80,17 @@ int main()
         shaderProgram.useShaderProgram();
         glBindVertexArray(vao);
 
+
         //draw points 0-3 from the currently bound VAO with current in-use shader
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
+        shaderProgram2.useShaderProgram();
+        glBindVertexArray(vao2);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
 
         //Poll event ----------
         while(SDL_PollEvent(&e)) {
-            if ((e.type == SDL_QUIT) || (e.key.keysym.sym == SDLK_ESCAPE)) {
+            if ((e.type == SDL_QUIT)) {
                 w_state = false;
             }
         } // While event

@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/opengltutorial.dir/main.cpp.o"
   "CMakeFiles/opengltutorial.dir/ShaderProgram.cpp.o"
+  "CMakeFiles/opengltutorial.dir/DebugLog.cpp.o"
   "opengltutorial.pdb"
   "opengltutorial"
 )

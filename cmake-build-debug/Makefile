@@ -123,6 +123,33 @@ opengltutorial/fast:
 	$(MAKE) -f CMakeFiles/opengltutorial.dir/build.make CMakeFiles/opengltutorial.dir/build
 .PHONY : opengltutorial/fast
 
+DebugLog.o: DebugLog.cpp.o
+
+.PHONY : DebugLog.o
+
+# target to build an object file
+DebugLog.cpp.o:
+	$(MAKE) -f CMakeFiles/opengltutorial.dir/build.make CMakeFiles/opengltutorial.dir/DebugLog.cpp.o
+.PHONY : DebugLog.cpp.o
+
+DebugLog.i: DebugLog.cpp.i
+
+.PHONY : DebugLog.i
+
+# target to preprocess a source file
+DebugLog.cpp.i:
+	$(MAKE) -f CMakeFiles/opengltutorial.dir/build.make CMakeFiles/opengltutorial.dir/DebugLog.cpp.i
+.PHONY : DebugLog.cpp.i
+
+DebugLog.s: DebugLog.cpp.s
+
+.PHONY : DebugLog.s
+
+# target to generate assembly for a file
+DebugLog.cpp.s:
+	$(MAKE) -f CMakeFiles/opengltutorial.dir/build.make CMakeFiles/opengltutorial.dir/DebugLog.cpp.s
+.PHONY : DebugLog.cpp.s
+
 ShaderProgram.o: ShaderProgram.cpp.o
 
 .PHONY : ShaderProgram.o
@@ -186,6 +213,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... opengltutorial"
+	@echo "... DebugLog.o"
+	@echo "... DebugLog.i"
+	@echo "... DebugLog.s"
 	@echo "... ShaderProgram.o"
 	@echo "... ShaderProgram.i"
 	@echo "... ShaderProgram.s"
