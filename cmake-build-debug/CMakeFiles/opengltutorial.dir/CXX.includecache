@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/stel/opengltutorial/ShaderProgram.cpp
+ShaderProgram.h
+/home/stel/opengltutorial/ShaderProgram.h
+fstream
+-
+iostream
+-
+sstream
+-
+vector
+-
+
+/home/stel/opengltutorial/ShaderProgram.h
+string
+-
+GL/glew.h
+-
+
+/home/stel/opengltutorial/main.cpp
+iostream
+-
+SDL2/SDL.h
+-
+GL/glew.h
+-
+glm/glm.hpp
+-
+ShaderProgram.h
+/home/stel/opengltutorial/ShaderProgram.h
+

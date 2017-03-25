@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/opengltutorial.dir/main.cpp.o CMakeFiles/opengltutorial.dir/ShaderProgram.cpp.o  -o opengltutorial /usr/local/lib/libSDL2main.a /usr/local/lib/libSDL2.so -lpthread /usr/lib/x86_64-linux-gnu/libSDL2_image.so /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libGL.so -lGLEW -Wl,-rpath,/usr/local/lib 
