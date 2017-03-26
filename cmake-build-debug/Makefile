@@ -150,6 +150,60 @@ DebugLog.cpp.s:
 	$(MAKE) -f CMakeFiles/opengltutorial.dir/build.make CMakeFiles/opengltutorial.dir/DebugLog.cpp.s
 .PHONY : DebugLog.cpp.s
 
+FpsLimiter.o: FpsLimiter.cpp.o
+
+.PHONY : FpsLimiter.o
+
+# target to build an object file
+FpsLimiter.cpp.o:
+	$(MAKE) -f CMakeFiles/opengltutorial.dir/build.make CMakeFiles/opengltutorial.dir/FpsLimiter.cpp.o
+.PHONY : FpsLimiter.cpp.o
+
+FpsLimiter.i: FpsLimiter.cpp.i
+
+.PHONY : FpsLimiter.i
+
+# target to preprocess a source file
+FpsLimiter.cpp.i:
+	$(MAKE) -f CMakeFiles/opengltutorial.dir/build.make CMakeFiles/opengltutorial.dir/FpsLimiter.cpp.i
+.PHONY : FpsLimiter.cpp.i
+
+FpsLimiter.s: FpsLimiter.cpp.s
+
+.PHONY : FpsLimiter.s
+
+# target to generate assembly for a file
+FpsLimiter.cpp.s:
+	$(MAKE) -f CMakeFiles/opengltutorial.dir/build.make CMakeFiles/opengltutorial.dir/FpsLimiter.cpp.s
+.PHONY : FpsLimiter.cpp.s
+
+InputHandler.o: InputHandler.cpp.o
+
+.PHONY : InputHandler.o
+
+# target to build an object file
+InputHandler.cpp.o:
+	$(MAKE) -f CMakeFiles/opengltutorial.dir/build.make CMakeFiles/opengltutorial.dir/InputHandler.cpp.o
+.PHONY : InputHandler.cpp.o
+
+InputHandler.i: InputHandler.cpp.i
+
+.PHONY : InputHandler.i
+
+# target to preprocess a source file
+InputHandler.cpp.i:
+	$(MAKE) -f CMakeFiles/opengltutorial.dir/build.make CMakeFiles/opengltutorial.dir/InputHandler.cpp.i
+.PHONY : InputHandler.cpp.i
+
+InputHandler.s: InputHandler.cpp.s
+
+.PHONY : InputHandler.s
+
+# target to generate assembly for a file
+InputHandler.cpp.s:
+	$(MAKE) -f CMakeFiles/opengltutorial.dir/build.make CMakeFiles/opengltutorial.dir/InputHandler.cpp.s
+.PHONY : InputHandler.cpp.s
+
 ShaderProgram.o: ShaderProgram.cpp.o
 
 .PHONY : ShaderProgram.o
@@ -216,6 +270,12 @@ help:
 	@echo "... DebugLog.o"
 	@echo "... DebugLog.i"
 	@echo "... DebugLog.s"
+	@echo "... FpsLimiter.o"
+	@echo "... FpsLimiter.i"
+	@echo "... FpsLimiter.s"
+	@echo "... InputHandler.o"
+	@echo "... InputHandler.i"
+	@echo "... InputHandler.s"
 	@echo "... ShaderProgram.o"
 	@echo "... ShaderProgram.i"
 	@echo "... ShaderProgram.s"

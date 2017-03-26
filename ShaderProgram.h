@@ -16,6 +16,8 @@ public:
 
     bool loadShaders(const std::string& vertexShader, const std::string& fragmentShader);
     void useShaderProgram();
+    GLuint& getShaderProgram() { return m_Program; }
+    void refreshShaders();
 
 private:
 
@@ -25,6 +27,9 @@ private:
     GLuint m_Program;
     GLuint m_VertexShader;
     GLuint m_FragmentShader;
+
+    std::string m_VertexShaderPath;
+    std::string m_FragmentShaderPath;
 
 };
 

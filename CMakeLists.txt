@@ -4,7 +4,7 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(SOURCE_FILES main.cpp ShaderProgram.cpp ShaderProgram.h DebugLog.cpp DebugLog.h)
+set(SOURCE_FILES main.cpp ShaderProgram.cpp ShaderProgram.h DebugLog.cpp DebugLog.h FpsLimiter.cpp FpsLimiter.h InputHandler.cpp InputHandler.h)
 add_executable(opengltutorial ${SOURCE_FILES})
 
 find_package(OpenGL REQUIRED)

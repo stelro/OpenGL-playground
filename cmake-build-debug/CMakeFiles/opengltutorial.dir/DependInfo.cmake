@@ -5,6 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/stel/opengltutorial/DebugLog.cpp" "/home/stel/opengltutorial/cmake-build-debug/CMakeFiles/opengltutorial.dir/DebugLog.cpp.o"
+  "/home/stel/opengltutorial/FpsLimiter.cpp" "/home/stel/opengltutorial/cmake-build-debug/CMakeFiles/opengltutorial.dir/FpsLimiter.cpp.o"
+  "/home/stel/opengltutorial/InputHandler.cpp" "/home/stel/opengltutorial/cmake-build-debug/CMakeFiles/opengltutorial.dir/InputHandler.cpp.o"
   "/home/stel/opengltutorial/ShaderProgram.cpp" "/home/stel/opengltutorial/cmake-build-debug/CMakeFiles/opengltutorial.dir/ShaderProgram.cpp.o"
   "/home/stel/opengltutorial/main.cpp" "/home/stel/opengltutorial/cmake-build-debug/CMakeFiles/opengltutorial.dir/main.cpp.o"
   )

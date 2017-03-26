@@ -29,6 +29,9 @@ void ShaderProgram::useShaderProgram() {
 
 bool ShaderProgram::loadShaders(const std::string &vertexShader, const std::string &fragmentShader) {
 
+    m_VertexShaderPath = vertexShader;
+    m_FragmentShaderPath = fragmentShader;
+
     std::ifstream vs(vertexShader);
 
     if (!vs.is_open()) {
@@ -161,6 +164,16 @@ bool ShaderProgram::checkLinkStatus() {
     }
 
     return  true;
+
+}
+
+void ShaderProgram::refreshShaders() {
+
+    if (m_VertexShader != 0)    glDeleteShader(m_VertexShader);
+    if (m_FragmentShader != 0)  glDeleteShader(m_FragmentShader);
+    if (m_Program != 0)         glDeleteProgram(m_Program);
+
+    loadShaders(m_VertexShaderPath, m_FragmentShaderPath);
 
 }
 

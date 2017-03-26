@@ -94,6 +94,18 @@
 		<Unit filename="/home/stel/opengltutorial/DebugLog.h">
 			<Option target="opengltutorial"/>
 		</Unit>
+		<Unit filename="/home/stel/opengltutorial/FpsLimiter.cpp">
+			<Option target="opengltutorial"/>
+		</Unit>
+		<Unit filename="/home/stel/opengltutorial/FpsLimiter.h">
+			<Option target="opengltutorial"/>
+		</Unit>
+		<Unit filename="/home/stel/opengltutorial/InputHandler.cpp">
+			<Option target="opengltutorial"/>
+		</Unit>
+		<Unit filename="/home/stel/opengltutorial/InputHandler.h">
+			<Option target="opengltutorial"/>
+		</Unit>
 		<Unit filename="/home/stel/opengltutorial/ShaderProgram.cpp">
 			<Option target="opengltutorial"/>
 		</Unit>

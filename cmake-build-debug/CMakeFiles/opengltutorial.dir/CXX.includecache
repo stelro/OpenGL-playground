@@ -6,6 +6,40 @@
 
 #IncludeRegexTransform: 
 
+/home/stel/opengltutorial/DebugLog.cpp
+DebugLog.h
+/home/stel/opengltutorial/DebugLog.h
+
+/home/stel/opengltutorial/DebugLog.h
+cstdarg
+-
+ctime
+-
+fstream
+-
+iostream
+-
+
+/home/stel/opengltutorial/FpsLimiter.cpp
+FpsLimiter.h
+/home/stel/opengltutorial/FpsLimiter.h
+SDL2/SDL.h
+-
+
+/home/stel/opengltutorial/FpsLimiter.h
+string
+-
+
+/home/stel/opengltutorial/InputHandler.cpp
+InputHandler.h
+/home/stel/opengltutorial/InputHandler.h
+
+/home/stel/opengltutorial/InputHandler.h
+SDL2/SDL.h
+-
+map
+-
+
 /home/stel/opengltutorial/ShaderProgram.cpp
 ShaderProgram.h
 /home/stel/opengltutorial/ShaderProgram.h
@@ -35,4 +69,10 @@ glm/glm.hpp
 -
 ShaderProgram.h
 /home/stel/opengltutorial/ShaderProgram.h
+DebugLog.h
+/home/stel/opengltutorial/DebugLog.h
+FpsLimiter.h
+/home/stel/opengltutorial/FpsLimiter.h
+InputHandler.h
+/home/stel/opengltutorial/InputHandler.h
 
