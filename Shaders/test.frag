@@ -4,5 +4,7 @@ in vec3 colour;
 out vec4 frag_color;
 
 void main() {
-    frag_color = vec4(colour, 1.0);
+   vec3 tmp_color = colour;
+   tmp_color.r = sin(90);
+    frag_color = vec4(tmp_color, 1.0);
 }

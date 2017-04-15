@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/stel/opengltutorial/InputHandler.cpp" "/home/stel/opengltutorial/cmake-build-debug/CMakeFiles/opengltutorial.dir/InputHandler.cpp.o"
   "/home/stel/opengltutorial/ShaderProgram.cpp" "/home/stel/opengltutorial/cmake-build-debug/CMakeFiles/opengltutorial.dir/ShaderProgram.cpp.o"
   "/home/stel/opengltutorial/main.cpp" "/home/stel/opengltutorial/cmake-build-debug/CMakeFiles/opengltutorial.dir/main.cpp.o"
+  "/home/stel/opengltutorial/maths_funcs.cpp" "/home/stel/opengltutorial/cmake-build-debug/CMakeFiles/opengltutorial.dir/maths_funcs.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

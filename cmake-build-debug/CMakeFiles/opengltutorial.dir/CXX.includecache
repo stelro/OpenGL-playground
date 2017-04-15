@@ -37,7 +37,7 @@ InputHandler.h
 /home/stel/opengltutorial/InputHandler.h
 SDL2/SDL.h
 -
-map
+unordered_map
 -
 
 /home/stel/opengltutorial/ShaderProgram.cpp
@@ -67,6 +67,8 @@ GL/glew.h
 -
 glm/glm.hpp
 -
+glm/gtc/matrix_transform.hpp
+-
 ShaderProgram.h
 /home/stel/opengltutorial/ShaderProgram.h
 DebugLog.h
@@ -75,4 +77,16 @@ FpsLimiter.h
 /home/stel/opengltutorial/FpsLimiter.h
 InputHandler.h
 /home/stel/opengltutorial/InputHandler.h
+maths_funcs.h
+/home/stel/opengltutorial/maths_funcs.h
+
+/home/stel/opengltutorial/maths_funcs.cpp
+maths_funcs.h
+/home/stel/opengltutorial/maths_funcs.h
+stdio.h
+-
+math.h
+-
+
+/home/stel/opengltutorial/maths_funcs.h
 

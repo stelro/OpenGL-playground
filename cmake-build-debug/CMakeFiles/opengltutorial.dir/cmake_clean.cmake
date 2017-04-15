@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/opengltutorial.dir/DebugLog.cpp.o"
   "CMakeFiles/opengltutorial.dir/FpsLimiter.cpp.o"
   "CMakeFiles/opengltutorial.dir/InputHandler.cpp.o"
+  "CMakeFiles/opengltutorial.dir/maths_funcs.cpp.o"
   "opengltutorial.pdb"
   "opengltutorial"
 )

@@ -1,29 +1,48 @@
 //
-// Created by stel on 25/3/2017.
+// Created by stel on 26/3/2017.
 //
 
-#ifndef OPENGLTUTORIAL_INPUTHANDLER_H
-#define OPENGLTUTORIAL_INPUTHANDLER_H
+#ifndef INPUTHANDLING_INPUTHANDLER_H
+#define INPUTHANDLING_INPUTHANDLER_H
 
 #include <SDL2/SDL.h>
-#include <map>
+#include <unordered_map>
 
 class InputHandler {
 public:
+
+    static InputHandler*                        instance();
+    static void                                 deleteInstance();
+
+    SDL_Event*                                  getEvent() const { return m_Event; }
+
+    void                                        update();
+
+    bool                                        isPressed(SDL_Keycode key);
+    bool                                        isHoldDown(SDL_Keycode key);
+
+    float                                       mouseCoordX() const { return m_MouseCoordX; }
+    float                                       mouseCoordY() const { return m_MouseCoordY; }
+
+private:
     InputHandler();
     ~InputHandler();
 
-    void update();
+    bool                                        wasKeyDown(SDL_Keycode key);
+    bool                                        pressKey(SDL_Keycode key);
+    bool                                        releaseKey(SDL_Keycode key);
 
-    bool isPressed(SDL_Keycode);
-    bool isReleased(SDL_Keycode);
+    static InputHandler*                        m_Instance;
 
-    SDL_Event* getEvent() { return m_Event; }
+    SDL_Event*                                  m_Event;
 
-private:
-    SDL_Event *m_Event;
-    std::map<SDL_Keycode, bool> m_mapKeys;
+    std::unordered_map<SDL_Keycode, bool>       m_mapKeys;
+    std::unordered_map<SDL_Keycode, bool>       m_PreviousMapKeys;
+
+    float                                       m_MouseCoordX;
+    float                                       m_MouseCoordY;
+
 };
 
 
-#endif //OPENGLTUTORIAL_INPUTHANDLER_H
+#endif //INPUTHANDLING_INPUTHANDLER_H
