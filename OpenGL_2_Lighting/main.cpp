@@ -36,6 +36,7 @@ bool firstMouse = true;
 bool keys[1024];
 
 
+glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
 int main()
 {
@@ -76,8 +77,9 @@ int main()
 
     //-------------------------------SHADER----------------------------------------//
 
-    ShaderProgram shader;
-    shader.loadShaders("Shaders/vertex.glsl", "Shaders/fragment.glsl");
+    ShaderProgram lightShader, lampShader;
+    lightShader.loadShaders("Shaders/lightVertex.glsl", "Shaders/lightFragment.glsl");
+    lampShader.loadShaders("Shaders/lampVertex.glsl", "Shaders/lampFragment.glsl");
 
     //-----------------------------------------------------------------------------//
 
@@ -129,9 +131,6 @@ int main()
 
 
     glm::vec3 objectPos = glm::vec3(2.4f, -0.4f, -3.5f);
-    glm::vec3 lightPos = glm::vec3( 1.5f,  2.0f, -2.5f);
-
-
 
     //Cube VAO
     GLuint vao, vbo;
@@ -158,13 +157,6 @@ int main()
     glEnableVertexAttribArray(0);
     glBindVertexArray(0);
 
-    glUseProgram(shader.getShaderProgram());
-    GLint objectColorLoc = glGetUniformLocation(shader.getShaderProgram(), "objectColor");
-    GLint lightColorLoc = glGetUniformLocation(shader.getShaderProgram(), "lightColor");
-    glUniform3f(objectColorLoc, 1.0f, 0.5f, 0.31f);
-    glUniform3d(lightColorLoc, 1.0f, 1.0f, 1.0f);
-
-    shader.useShaderProgram();
 
     while (!glfwWindowShouldClose(window))
     {
@@ -177,27 +169,47 @@ int main()
         glfwPollEvents();
         do_movement();
 
-        GLint model_location = glGetUniformLocation(shader.getShaderProgram(), "model");
-        GLint view_location = glGetUniformLocation(shader.getShaderProgram(), "view");
-        GLint proj_location = glGetUniformLocation(shader.getShaderProgram(), "projection");
+        lightShader.useShaderProgram();
+        GLint model_location = glGetUniformLocation(lightShader.getShaderProgram(), "model");
+        GLint view_location = glGetUniformLocation(lightShader.getShaderProgram(), "view");
+        GLint proj_location = glGetUniformLocation(lightShader.getShaderProgram(), "projection");
+        GLint objColorLoc = glGetUniformLocation(lightShader.getShaderProgram(), "objectColor");
+        GLint lightColorLoc = glGetUniformLocation(lightShader.getShaderProgram(), "lightColor");
 
         glm::mat4 model;
         glm::mat4 view = camera.GetViewMatrix();
-        glm::mat4 projection = glm::perspective(camera.Zoom, ((float)WINDOW_WIDTH/(float)WINDOW_HEIGHT), 0.1f, 100.0f);
+        glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), ((float)WINDOW_WIDTH/(float)WINDOW_HEIGHT), 0.1f, 100.0f);
 
         glUniformMatrix4fv(model_location, 1, GL_FALSE, glm::value_ptr(model));
         glUniformMatrix4fv(view_location, 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(proj_location, 1, GL_FALSE, glm::value_ptr(projection));
 
+        glUniform3f(objColorLoc, 1.0f, 0.5f, 0.31f);
+        glUniform3f(lightColorLoc, 1.0f, 1.0f, 1.0f);
+
         glBindVertexArray(vao);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+        glBindVertexArray(0);
+
+        lampShader.useShaderProgram();
+        model = glm::mat4();
+        model = glm::translate(model, lightPos);
+        model = glm::scale(model, glm::vec3(0.2f));
+
+        model_location = glGetUniformLocation(lampShader.getShaderProgram(), "model");
+        view_location = glGetUniformLocation(lampShader.getShaderProgram(), "view");
+        proj_location = glGetUniformLocation(lampShader.getShaderProgram(), "projection");
+        glUniformMatrix4fv(model_location, 1, GL_FALSE, glm::value_ptr(model));
+        glUniformMatrix4fv(view_location, 1, GL_FALSE, glm::value_ptr(view));
+        glUniformMatrix4fv(proj_location, 1, GL_FALSE, glm::value_ptr(projection));
+
+        glBindVertexArray(lightVao);
         glDrawArrays(GL_TRIANGLES, 0, 36);
         glBindVertexArray(0);
 
 
         glfwSwapBuffers(window);
     }
-
-
 
 
     glfwTerminate();
@@ -217,7 +229,6 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
         keys[key] = true;
     else if(action == GLFW_RELEASE)
         keys[key] = false;
-
 
 }
 
