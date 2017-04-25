@@ -84,64 +84,85 @@ int main()
 
 
     GLfloat vertices[] = {
-            -0.5f, -0.5f, -0.5f,    0.0f, 0.0f,
-             0.5f, -0.5f, -0.5f,    1.0f, 0.0f,
-             0.5f,  0.5f, -0.5f,    1.0f, 1.0f,
-             0.5f,  0.5f, -0.5f,    1.0f, 1.0f,
-            -0.5f,  0.5f, -0.5f,    0.0f, 1.0f,
-            -0.5f, -0.5f, -0.5f,    0.0f, 0.0f,
+            -0.5f, -0.5f, -0.5f,
+             0.5f, -0.5f, -0.5f,
+             0.5f,  0.5f, -0.5f,
+             0.5f,  0.5f, -0.5f,
+            -0.5f,  0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,
 
-            -0.5f, -0.5f,  0.5f,    0.0f, 0.0f,
-             0.5f, -0.5f,  0.5f,    1.0f, 0.0f,
-             0.5f,  0.5f,  0.5f,    1.0f, 1.0f,
-             0.5f,  0.5f,  0.5f,    1.0f, 1.0f,
-            -0.5f,  0.5f,  0.5f,    0.0f, 1.0f,
-            -0.5f, -0.5f,  0.5f,    0.0f, 0.0f,
+            -0.5f, -0.5f,  0.5f,
+             0.5f, -0.5f,  0.5f,
+             0.5f,  0.5f,  0.5f,
+             0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f,
+            -0.5f, -0.5f,  0.5f,
 
-            -0.5f,  0.5f,  0.5f,    1.0f, 0.0f,
-            -0.5f,  0.5f, -0.5f,    1.0f, 1.0f,
-            -0.5f, -0.5f, -0.5f,    0.0f, 1.0f,
-            -0.5f, -0.5f, -0.5f,    0.0f, 1.0f,
-            -0.5f, -0.5f,  0.5f,    0.0f, 0.0f,
-            -0.5f,  0.5f,  0.5f,    1.0f, 0.0f,
+            -0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,
+            -0.5f, -0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f,
 
-             0.5f,  0.5f,  0.5f,    1.0f, 0.0f,
-             0.5f,  0.5f, -0.5f,    1.0f, 1.0f,
-             0.5f, -0.5f, -0.5f,    0.0f, 1.0f,
-             0.5f, -0.5f, -0.5f,    0.0f, 1.0f,
-             0.5f, -0.5f,  0.5f,    0.0f, 0.0f,
-             0.5f,  0.5f,  0.5f,    1.0f, 0.0f,
+             0.5f,  0.5f,  0.5f,
+             0.5f,  0.5f, -0.5f,
+             0.5f, -0.5f, -0.5f,
+             0.5f, -0.5f, -0.5f,
+             0.5f, -0.5f,  0.5f,
+             0.5f,  0.5f,  0.5f,
 
-            -0.5f, -0.5f, -0.5f,    0.0f, 1.0f,
-             0.5f, -0.5f, -0.5f,    1.0f, 1.0f,
-             0.5f, -0.5f,  0.5f,    1.0f, 0.0f,
-             0.5f, -0.5f,  0.5f,    1.0f, 0.0f,
-            -0.5f, -0.5f,  0.5f,    0.0f, 0.0f,
-            -0.5f, -0.5f, -0.5f,    0.0f, 1.0f,
+            -0.5f, -0.5f, -0.5f,
+             0.5f, -0.5f, -0.5f,
+             0.5f, -0.5f,  0.5f,
+             0.5f, -0.5f,  0.5f,
+            -0.5f, -0.5f,  0.5f,
+            -0.5f, -0.5f, -0.5f,
 
-            -0.5f,  0.5f, -0.5f,    0.0f, 1.0f,
-             0.5f,  0.5f, -0.5f,    1.0f, 1.0f,
-             0.5f,  0.5f,  0.5f,    1.0f, 0.0f,
-             0.5f,  0.5f,  0.5f,    1.0f, 0.0f,
-            -0.5f,  0.5f,  0.5f,    0.0f, 0.0f,
-            -0.5f,  0.5f, -0.5f,    0.0f, 1.0f
-    };
-
-    glm::vec3 cubePositions[] = {
-            glm::vec3( 0.0f,  0.0f,  0.0f),
-            glm::vec3( 2.0f,  5.0f, -15.0f),
-            glm::vec3(-1.5f, -2.2f, -2.5f),
-            glm::vec3(-3.8f, -2.0f, -12.3f),
-            glm::vec3( 2.4f, -0.4f, -3.5f),
-            glm::vec3(-1.7f,  3.0f, -7.5f),
-            glm::vec3( 1.3f, -2.0f, -2.5f),
-            glm::vec3( 1.5f,  2.0f, -2.5f),
-            glm::vec3( 1.5f,  0.2f, -1.5f),
-            glm::vec3(-1.3f,  1.0f, -1.5f)
+            -0.5f,  0.5f, -0.5f,
+             0.5f,  0.5f, -0.5f,
+             0.5f,  0.5f,  0.5f,
+             0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f, -0.5f
     };
 
 
+    glm::vec3 objectPos = glm::vec3(2.4f, -0.4f, -3.5f);
+    glm::vec3 lightPos = glm::vec3( 1.5f,  2.0f, -2.5f);
 
+
+
+    //Cube VAO
+    GLuint vao, vbo;
+    vao = vbo = 0;
+
+    glGenVertexArrays(1, &vao);
+    glBindVertexArray(vao);
+
+    glGenBuffers(1, &vbo);
+    glBindBuffer(GL_ARRAY_BUFFER, vao);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
+    glEnableVertexAttribArray(0);
+    glBindVertexArray(0);
+
+
+    //Lgith VAO
+    GLuint lightVao = 0;
+    glGenVertexArrays(1, &lightVao);
+    glBindVertexArray(lightVao);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
+    glEnableVertexAttribArray(0);
+    glBindVertexArray(0);
+
+    glUseProgram(shader.getShaderProgram());
+    GLint objectColorLoc = glGetUniformLocation(shader.getShaderProgram(), "objectColor");
+    GLint lightColorLoc = glGetUniformLocation(shader.getShaderProgram(), "lightColor");
+    glUniform3f(objectColorLoc, 1.0f, 0.5f, 0.31f);
+    glUniform3d(lightColorLoc, 1.0f, 1.0f, 1.0f);
 
     shader.useShaderProgram();
 
@@ -156,7 +177,21 @@ int main()
         glfwPollEvents();
         do_movement();
 
+        GLint model_location = glGetUniformLocation(shader.getShaderProgram(), "model");
+        GLint view_location = glGetUniformLocation(shader.getShaderProgram(), "view");
+        GLint proj_location = glGetUniformLocation(shader.getShaderProgram(), "projection");
 
+        glm::mat4 model;
+        glm::mat4 view = camera.GetViewMatrix();
+        glm::mat4 projection = glm::perspective(camera.Zoom, ((float)WINDOW_WIDTH/(float)WINDOW_HEIGHT), 0.1f, 100.0f);
+
+        glUniformMatrix4fv(model_location, 1, GL_FALSE, glm::value_ptr(model));
+        glUniformMatrix4fv(view_location, 1, GL_FALSE, glm::value_ptr(view));
+        glUniformMatrix4fv(proj_location, 1, GL_FALSE, glm::value_ptr(projection));
+
+        glBindVertexArray(vao);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+        glBindVertexArray(0);
 
 
         glfwSwapBuffers(window);

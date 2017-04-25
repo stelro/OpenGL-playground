@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/stel/workspace-gaming/OpenGLBook-Lighting/Camera.h
+/home/stel/workspace-gaming/OpenGL-playground/OpenGL_2_Lighting/Camera.h
 vector
 -
 GL/glew.h
@@ -16,9 +16,9 @@ glm/glm.hpp
 glm/gtc/matrix_transform.hpp
 -
 
-/home/stel/workspace-gaming/OpenGLBook-Lighting/ShaderProgram.cpp
+/home/stel/workspace-gaming/OpenGL-playground/OpenGL_2_Lighting/ShaderProgram.cpp
 ShaderProgram.h
-/home/stel/workspace-gaming/OpenGLBook-Lighting/ShaderProgram.h
+/home/stel/workspace-gaming/OpenGL-playground/OpenGL_2_Lighting/ShaderProgram.h
 fstream
 -
 iostream
@@ -28,13 +28,13 @@ sstream
 vector
 -
 
-/home/stel/workspace-gaming/OpenGLBook-Lighting/ShaderProgram.h
+/home/stel/workspace-gaming/OpenGL-playground/OpenGL_2_Lighting/ShaderProgram.h
 string
 -
 GL/glew.h
 -
 
-/home/stel/workspace-gaming/OpenGLBook-Lighting/main.cpp
+/home/stel/workspace-gaming/OpenGL-playground/OpenGL_2_Lighting/main.cpp
 iostream
 -
 GL/glew.h
@@ -52,7 +52,7 @@ glm/gtc/matrix_transform.hpp
 glm/gtc/type_ptr.hpp
 -
 ShaderProgram.h
-/home/stel/workspace-gaming/OpenGLBook-Lighting/ShaderProgram.h
+/home/stel/workspace-gaming/OpenGL-playground/OpenGL_2_Lighting/ShaderProgram.h
 Camera.h
-/home/stel/workspace-gaming/OpenGLBook-Lighting/Camera.h
+/home/stel/workspace-gaming/OpenGL-playground/OpenGL_2_Lighting/Camera.h
 

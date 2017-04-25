@@ -1,4 +1,4 @@
-# Install script for directory: /home/stel/workspace-gaming/OpenGLBook-Lighting
+# Install script for directory: /home/stel/workspace-gaming/OpenGL-playground/OpenGL_2_Lighting
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/stel/workspace-gaming/OpenGLBook-Lighting/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/stel/workspace-gaming/OpenGL-playground/OpenGL_2_Lighting/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
