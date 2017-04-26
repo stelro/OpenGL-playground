@@ -159,9 +159,7 @@ int main()
     glEnableVertexAttribArray(0);
     glBindVertexArray(0);
 
-    lightShader.useShaderProgram();
-    GLint lightPosLoc = glGetUniformLocation(lightShader.getShaderProgram(), "lightPos");
-    glUniform3f(lightPosLoc, lightPos.x, lightPos.y, lightPos.z);
+
 
     while (!glfwWindowShouldClose(window))
     {
@@ -191,6 +189,9 @@ int main()
         glUniformMatrix4fv(view_location, 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(proj_location, 1, GL_FALSE, glm::value_ptr(projection));
 
+        GLint lightPosLoc = glGetUniformLocation(lightShader.getShaderProgram(), "lightPos");
+        glUniform3f(lightPosLoc, lightPos.x, lightPos.y, lightPos.z);
+
         glUniform3f(objColorLoc, 1.0f, 0.5f, 0.31f);
         glUniform3f(lightColorLoc, 1.0f, 1.0f, 1.0f);
         glUniform3f(camPosLoc, camera.Position.x, camera.Position.y, camera.Position.z);
@@ -201,6 +202,8 @@ int main()
 
         lampShader.useShaderProgram();
         model = glm::mat4();
+        lightPos.z = sin(glfwGetTime());
+        lightPos.y = cos(glfwGetTime());
         model = glm::translate(model, lightPos);
         model = glm::scale(model, glm::vec3(0.2f));
 
