@@ -35,6 +35,8 @@ bool firstMouse = true;
 
 bool keys[1024];
 
+glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+
 int main()
 {
     //------------------------------OPENGL SETUP------------------------------------//
@@ -72,6 +74,75 @@ int main()
 
     glEnable(GL_DEPTH_TEST);
 
+    float vertices[] = {
+            -0.5f, -0.5f, -0.5f,
+            0.5f, -0.5f, -0.5f,
+            0.5f,  0.5f, -0.5f,
+            0.5f,  0.5f, -0.5f,
+            -0.5f,  0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,
+
+            -0.5f, -0.5f,  0.5f,
+            0.5f, -0.5f,  0.5f,
+            0.5f,  0.5f,  0.5f,
+            0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f,
+            -0.5f, -0.5f,  0.5f,
+
+            -0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,
+            -0.5f, -0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f,
+
+            0.5f,  0.5f,  0.5f,
+            0.5f,  0.5f, -0.5f,
+            0.5f, -0.5f, -0.5f,
+            0.5f, -0.5f, -0.5f,
+            0.5f, -0.5f,  0.5f,
+            0.5f,  0.5f,  0.5f,
+
+            -0.5f, -0.5f, -0.5f,
+            0.5f, -0.5f, -0.5f,
+            0.5f, -0.5f,  0.5f,
+            0.5f, -0.5f,  0.5f,
+            -0.5f, -0.5f,  0.5f,
+            -0.5f, -0.5f, -0.5f,
+
+            -0.5f,  0.5f, -0.5f,
+            0.5f,  0.5f, -0.5f,
+            0.5f,  0.5f,  0.5f,
+            0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f, -0.5f,
+    };
+
+    ShaderProgram objectShader, lampShader;
+    objectShader.loadShaders("Shaders/objectVertex.glsl", "Shaders/objectFragment.glsl");
+    lampShader.loadShaders("Shaders/lampVertex.glsl", "Shaders/lampFragment.glsl");
+
+    GLuint vao, vbo;
+    vao = vbo = 0;
+
+    glGenBuffers(1, &vbo);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+    glGenVertexArrays(1, &vao);
+    glBindVertexArray(vao);
+    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
+    glEnableVertexAttribArray(0);
+    glBindVertexArray(0);
+
+    //Lamp vao
+    GLuint lampVao = 0;
+    glGenVertexArrays(1, &lampVao);
+    glBindVertexArray(lampVao);
+    glBindBuffer(GL_ARRAY_BUFFER,vbo);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
+    glEnableVertexAttribArray(0);
+    glBindVertexArray(0);
 
 
     while (!glfwWindowShouldClose(window))
@@ -85,7 +156,47 @@ int main()
         glfwPollEvents();
         do_movement();
 
+        //---------- OBJECT SHADER UNIFORMS --------------------//
 
+        objectShader.useShaderProgram();
+        glm::mat4 obj_model;
+        glm::mat4 obj_view = camera.GetViewMatrix();
+        glm::mat4 obj_proj = glm::perspective(camera.Zoom, (float)(WINDOW_WIDTH/WINDOW_HEIGHT), 0.1f, 100.0f);
+
+        GLint modelLocation = glGetUniformLocation(objectShader.getShaderProgram(), "model");
+        GLint viewLocation = glGetUniformLocation(objectShader.getShaderProgram(), "view");
+        GLint projLocation = glGetUniformLocation(objectShader.getShaderProgram(), "projection");
+
+        glUniformMatrix4fv(modelLocation, 1, GL_FALSE, glm::value_ptr(obj_model));
+        glUniformMatrix4fv(viewLocation, 1, GL_FALSE, glm::value_ptr(obj_view));
+        glUniformMatrix4fv(projLocation, 1, GL_FALSE, glm::value_ptr(obj_proj));
+
+        //------------------------------------------------------//
+
+        glBindVertexArray(vao);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+        glBindVertexArray(0);
+
+        //-------- Light Shader uniforms ------------------------//
+
+        lampShader.useShaderProgram();
+        obj_model = glm::mat4();
+        obj_model = glm::translate(obj_model, lightPos);
+        obj_model = glm::scale(obj_model, glm::vec3(0.2f));
+
+        modelLocation = glGetUniformLocation(lampShader.getShaderProgram(), "model");
+        viewLocation = glGetUniformLocation(lampShader.getShaderProgram(), "view");
+        projLocation = glGetUniformLocation(lampShader.getShaderProgram(), "projection");
+
+        glUniformMatrix4fv(modelLocation, 1, GL_FALSE, glm::value_ptr(obj_model));
+        glUniformMatrix4fv(viewLocation, 1, GL_FALSE, glm::value_ptr(obj_view));
+        glUniformMatrix4fv(projLocation, 1, GL_FALSE, glm::value_ptr(obj_proj));
+
+        glBindVertexArray(lampVao);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+        glBindVertexArray(0);
+
+        //-------------------------------------------------------//
 
 
         glfwSwapBuffers(window);
