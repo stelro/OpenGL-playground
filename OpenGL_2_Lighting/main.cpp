@@ -35,7 +35,6 @@ bool firstMouse = true;
 
 bool keys[1024];
 
-
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
 int main()
@@ -160,7 +159,6 @@ int main()
     glBindVertexArray(0);
 
 
-
     while (!glfwWindowShouldClose(window))
     {
         GLfloat currentFrame = glfwGetTime();
@@ -202,8 +200,6 @@ int main()
 
         lampShader.useShaderProgram();
         model = glm::mat4();
-        lightPos.z = sin(glfwGetTime());
-        lightPos.y = cos(glfwGetTime());
         model = glm::translate(model, lightPos);
         model = glm::scale(model, glm::vec3(0.2f));
 
@@ -217,7 +213,6 @@ int main()
         glBindVertexArray(lightVao);
         glDrawArrays(GL_TRIANGLES, 0, 36);
         glBindVertexArray(0);
-
 
         glfwSwapBuffers(window);
     }
@@ -238,8 +233,9 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 
     if(action == GLFW_PRESS)
         keys[key] = true;
-    else if(action == GLFW_RELEASE)
+    else if(action == GLFW_RELEASE) {
         keys[key] = false;
+    }
 
 }
 
