@@ -184,6 +184,24 @@ int main()
         glUniform3f(objectColorLoc,1.0f, 0.5f, 0.31f);
         glUniform3f(objectLightColorLoc, lightColor.x, lightColor.y, lightColor.z);
 
+        GLint matAmbientLoc  = glGetUniformLocation(objectShader.getShaderProgram(), "material.ambient");
+        GLint matDiffuseLoc  = glGetUniformLocation(objectShader.getShaderProgram(), "material.diffuse");
+        GLint matSpecularLoc = glGetUniformLocation(objectShader.getShaderProgram(), "material.specular");
+        GLint matShineLoc    = glGetUniformLocation(objectShader.getShaderProgram(), "material.shininess");
+
+        glUniform3f(matAmbientLoc,  0.24725f, 0.1995f, 0.0745f);
+        glUniform3f(matDiffuseLoc,  0.75164f, 0.60648f, 0.22648f);
+        glUniform3f(matSpecularLoc, 0.628281f, 0.555802f, 0.366065f);
+        glUniform1f(matShineLoc,    0.4f);
+
+        GLint lightAmbientLoc  = glGetUniformLocation(objectShader.getShaderProgram(), "light.ambient");
+        GLint lightDiffuseLoc  = glGetUniformLocation(objectShader.getShaderProgram(), "light.diffuse");
+        GLint lightSpecularLoc = glGetUniformLocation(objectShader.getShaderProgram(), "light.specular");
+
+        glUniform3f(lightAmbientLoc,  1.0f, 1.0f, 1.0f);
+        glUniform3f(lightDiffuseLoc,  1.0f, 1.0f, 1.0f); // Let's darken the light a bit to fit the scene
+        glUniform3f(lightSpecularLoc, 1.0f, 1.0f, 1.0f);
+
         //------------------------------------------------------//
 
         glBindVertexArray(vao);
