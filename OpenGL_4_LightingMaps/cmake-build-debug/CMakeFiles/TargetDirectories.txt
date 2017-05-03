@@ -1,0 +1,3 @@
+/home/stel/workspace-gaming/OpenGL-playground/OpenGL_4_LightingMaps/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/stel/workspace-gaming/OpenGL-playground/OpenGL_4_LightingMaps/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/stel/workspace-gaming/OpenGL-playground/OpenGL_4_LightingMaps/cmake-build-debug/CMakeFiles/OpenGLBook.dir

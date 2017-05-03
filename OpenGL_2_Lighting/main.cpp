@@ -187,6 +187,9 @@ int main()
         glUniformMatrix4fv(view_location, 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(proj_location, 1, GL_FALSE, glm::value_ptr(projection));
 
+        lightPos.x = sin(glfwGetTime());
+        lightPos.y = cos(glfwGetTime());
+
         GLint lightPosLoc = glGetUniformLocation(lightShader.getShaderProgram(), "lightPos");
         glUniform3f(lightPosLoc, lightPos.x, lightPos.y, lightPos.z);
 
