@@ -151,7 +151,11 @@ int main()
     glEnableVertexAttribArray(0);
 
     unsigned int diffuseMap = loadTexture("Assets/container2.png");
+    unsigned int specularMap = loadTexture("Assets/container2_specular.png");
 
+    lightingShader.use();
+    lightingShader.setInt("material.diffuse", 0);
+    lightingShader.setInt("material.specular", 1);
 
 
     while (!glfwWindowShouldClose(window))
@@ -195,10 +199,16 @@ int main()
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, diffuseMap);
 
+        // bind specular mpa
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, specularMap);
+
         // render the cube
         glBindVertexArray(cubeVAO);
         glDrawArrays(GL_TRIANGLES, 0, 36);
 
+        lightPos.x = sin(glfwGetTime());
+        lightPos.y = cos(glfwGetTime());
 
         // also draw the lamp object
         lampShader.use();
