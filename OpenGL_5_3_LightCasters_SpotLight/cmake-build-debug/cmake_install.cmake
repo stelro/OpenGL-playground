@@ -1,4 +1,4 @@
-# Install script for directory: /home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_LightCasters
+# Install script for directory: /home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_3_LightCasters_SpotLight
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_LightCasters/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_3_LightCasters_SpotLight/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

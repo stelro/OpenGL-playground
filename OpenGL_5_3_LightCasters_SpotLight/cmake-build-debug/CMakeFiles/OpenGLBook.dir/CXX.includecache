@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_LightCasters/Camera.h
+/home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_3_LightCasters_SpotLight/Camera.h
 vector
 -
 GL/glew.h
@@ -16,9 +16,9 @@ glm/glm.hpp
 glm/gtc/matrix_transform.hpp
 -
 
-/home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_LightCasters/ShaderProgram.cpp
+/home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_3_LightCasters_SpotLight/ShaderProgram.cpp
 ShaderProgram.h
-/home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_LightCasters/ShaderProgram.h
+/home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_3_LightCasters_SpotLight/ShaderProgram.h
 fstream
 -
 iostream
@@ -28,13 +28,13 @@ sstream
 vector
 -
 
-/home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_LightCasters/ShaderProgram.h
+/home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_3_LightCasters_SpotLight/ShaderProgram.h
 string
 -
 GL/glew.h
 -
 
-/home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_LightCasters/main.cpp
+/home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_3_LightCasters_SpotLight/main.cpp
 iostream
 -
 GL/glew.h
@@ -52,11 +52,11 @@ glm/gtc/matrix_transform.hpp
 glm/gtc/type_ptr.hpp
 -
 shader.hpp
-/home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_LightCasters/shader.hpp
+/home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_3_LightCasters_SpotLight/shader.hpp
 Camera.h
-/home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_LightCasters/Camera.h
+/home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_3_LightCasters_SpotLight/Camera.h
 
-/home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_LightCasters/shader.hpp
+/home/stel/workspace-gaming/OpenGL-playground/OpenGL_5_3_LightCasters_SpotLight/shader.hpp
 GL/glew.h
 -
 glm/glm.hpp

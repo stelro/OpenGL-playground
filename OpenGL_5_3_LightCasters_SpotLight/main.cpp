@@ -188,15 +188,15 @@ int main()
         lightingShader.use();
         //lightingShader.setVec3("light.direction", -0.2f, -1.0f, -0.3f);
         lightingShader.setVec3("viewPos", camera.Position);
-        lightingShader.setVec3("light.position", lightPos);
+        //lightingShader.setVec3("light.position", lightPos);
 
         // light properties
-        lightingShader.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
-        lightingShader.setVec3("light.diffuse", 0.5f, 0.5f, 0.5f);
+        lightingShader.setVec3("light.ambient", 0.1f, 0.1f, 0.1f);
+        lightingShader.setVec3("light.diffuse", 0.8f, 0.8f, 0.8f);
         lightingShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
         lightingShader.setFloat("light.constant", 1.0f);
         lightingShader.setFloat("light.linear", 0.09f);
-        lightingShader.setFloat("light.quadratic", 0.12f);
+        lightingShader.setFloat("light.quadratic", 0.32f);
 
         // material properties
         lightingShader.setFloat("material.shininess", 32.0f);
@@ -206,6 +206,11 @@ int main()
         glm::mat4 view = camera.GetViewMatrix();
         lightingShader.setMat4("projection", projection);
         lightingShader.setMat4("view", view);
+
+        lightingShader.setVec3("light.position", camera.Position.x, camera.Position.y, camera.Position.z);
+        lightingShader.setVec3("light.direction", camera.Front.x, camera.Front.y, camera.Front.z);
+        lightingShader.setFloat("light.cutOff", glm::cos(glm::radians(12.5f)));
+        lightingShader.setFloat("light.outerCutOff", 17.5f);
 
         // world transformation
         glm::mat4 model;
@@ -238,13 +243,13 @@ int main()
 
 
 
-        lampShader.use();
-        lampShader.setMat4("projection", projection);
-        lampShader.setMat4("view", view);
-        model = glm::mat4();
-        model = glm::translate(model, lightPos);
-        model = glm::scale(model, glm::vec3(0.2f)); // a smaller cube
-        lampShader.setMat4("model", model);
+//        lampShader.use();
+//        lampShader.setMat4("projection", projection);
+//        lampShader.setMat4("view", view);
+//        model = glm::mat4();
+//        model = glm::translate(model, lightPos);
+//        model = glm::scale(model, glm::vec3(0.2f)); // a smaller cube
+//        lampShader.setMat4("model", model);
 
         glBindVertexArray(lightVAO);
         glDrawArrays(GL_TRIANGLES, 0, 36);
