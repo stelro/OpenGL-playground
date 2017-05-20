@@ -29,8 +29,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3797">
-              <caret line="260" column="8" lean-forward="false" selection-start-line="260" selection-start-column="8" selection-end-line="260" selection-end-column="8" />
+            <state relative-caret-position="766">
+              <caret line="254" column="43" lean-forward="true" selection-start-line="254" selection-start-column="43" selection-end-line="254" selection-end-column="43" />
               <folding>
                 <element signature="e#246#267#0" expanded="true" />
               </folding>
@@ -135,7 +135,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OpenGL_7_MeshLoading" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -399,12 +399,12 @@
       <workItem from="1495027390051" duration="2972000" />
       <workItem from="1495212040510" duration="673000" />
       <workItem from="1495219381859" duration="3950000" />
-      <workItem from="1495274922671" duration="3724000" />
+      <workItem from="1495274922671" duration="6998000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61586000" />
+    <option name="totallyTimeSpent" value="64860000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -847,8 +847,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3797">
-          <caret line="260" column="8" lean-forward="false" selection-start-line="260" selection-start-column="8" selection-end-line="260" selection-end-column="8" />
+        <state relative-caret-position="766">
+          <caret line="254" column="43" lean-forward="true" selection-start-line="254" selection-start-column="43" selection-end-line="254" selection-end-column="43" />
           <folding>
             <element signature="e#246#267#0" expanded="true" />
           </folding>
