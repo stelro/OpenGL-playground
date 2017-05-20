@@ -239,18 +239,25 @@ int main()
         lightingShader.setFloat("pointLights[3].quadratic", 0.032f);
         lightingShader.setVec3("pointLights[3].position", pointLightsPositions[3]);
 
+        lightingShader.setVec3("spotLight.position", camera.Position.x, camera.Position.y, camera.Position.z);
+        lightingShader.setVec3("spotLight.direction", camera.Front.x, camera.Front.y, camera.Front.z);
+        lightingShader.setFloat("spotLight.cutOff", glm::cos(glm::radians(12.5f)));
+        lightingShader.setFloat("spotLight.outerCutOff", 17.5f);
+        lightingShader.setVec3("spotLight.ambient", 0.1f, 0.1f, 0.1f);
+        lightingShader.setVec3("spotLight.diffuse", 0.8f, 0.8f, 0.8f);
+        lightingShader.setVec3("spotLight.specular", 1.0f, 1.0f, 1.0f);
+        lightingShader.setFloat("spotLight.linear", 0.09f);
+        lightingShader.setFloat("spotLight.constant", 1.0f);
+        lightingShader.setFloat("spotLight.quadratic", 0.032f);
+
         //-----------------------------------------------
 
-        // view/projection transformations
+        // view/projection transformationsa
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), 800.0f / 600.0f, 0.1f, 100.0f);
         glm::mat4 view = camera.GetViewMatrix();
         lightingShader.setMat4("projection", projection);
         lightingShader.setMat4("view", view);
-//
-//        lightingShader.setVec3("light.position", camera.Position.x, camera.Position.y, camera.Position.z);
-//        lightingShader.setVec3("light.direction", camera.Front.x, camera.Front.y, camera.Front.z);
-//        lightingShader.setFloat("light.cutOff", glm::cos(glm::radians(12.5f)));
-//        lightingShader.setFloat("light.outerCutOff", 17.5f);
+
 
         // world transformation
         glm::mat4 model;
@@ -262,7 +269,6 @@ int main()
         // bind specular map
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, specularMap);
-
 
 
         // render containers
@@ -278,7 +284,6 @@ int main()
 
             glDrawArrays(GL_TRIANGLES, 0, 36);
         }
-
 
 
         lampShader.use();
